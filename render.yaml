@@ -6,6 +6,7 @@ services:
     buildCommand: |
       pip install -r requirements.txt
       python manage.py migrate
+      python manage.py create_admin  # <-- این خط جدید و کلیدی است
     startCommand: "gunicorn jozvehyab_project.wsgi"
     envVars:
       - key: DATABASE_URL
@@ -14,7 +15,6 @@ services:
           property: connectionString
       - key: SECRET_KEY
         generateValue: true
-      # --- بخش WEB_RENDER_URL به طور کامل حذف شد ---
       - key: TELEGRAM_BOT_TOKEN
         sync: false
       - key: ADMIN_USER_ID
