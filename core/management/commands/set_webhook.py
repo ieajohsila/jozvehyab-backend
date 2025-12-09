@@ -7,7 +7,8 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         token = os.environ.get('TELEGRAM_BOT_TOKEN')
-        render_url = os.environ.get('WEB_RENDER_URL')
+        # --- تغییر در این خط اعمال شده است ---
+        render_url = os.environ.get('RENDER_EXTERNAL_URL') 
 
         if not token or not render_url:
             self.stdout.write(self.style.ERROR('Token or Render URL not found in environment variables.'))
