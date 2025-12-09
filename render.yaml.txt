@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: jozvehyab-backend
+    runtime: python
+    plan: free
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py migrate
+    startCommand: "gunicorn jozvehyab_project.wsgi"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jozvehyab-db 
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_RENDER_URL
+        fromService:
+          type: web
+          name: jozvehyab-backend
+          property: url
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false
+      - key: ADMIN_USER_ID
+        sync: false

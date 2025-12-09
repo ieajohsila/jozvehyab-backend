@@ -1,0 +1,6 @@
+Django==4.2.7
+psycopg2-binary==2.9.9
+gunicorn==21.2.0
+python-telegram-bot==20.7
+requests==2.31.0
+dj-database-url==2.1.0
