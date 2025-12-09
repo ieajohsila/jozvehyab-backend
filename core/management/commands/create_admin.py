@@ -8,9 +8,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         User = get_user_model()
         # --- مقادیر زیر را با اطلاعات دلخواه خودتان جایگزین کنید ---
-        ADMIN_USERNAME = 'admin'
-        ADMIN_EMAIL = 'admin@example.com'
-        ADMIN_PASSWORD = 'YourSuperStrongPassword123!' # <-- یک رمز عبور قوی انتخاب کنید
+        ADMIN_USERNAME = 'ieajohsila'
+        ADMIN_EMAIL = 'alishojaei73@gmail.com'
+        ADMIN_PASSWORD = 'i7gnUCgV!' # <-- یک رمز عبور قوی انتخاب کنید
 
         if not User.objects.filter(username=ADMIN_USERNAME).exists():
             self.stdout.write(self.style.SUCCESS(f"Creating account for {ADMIN_USERNAME}"))
